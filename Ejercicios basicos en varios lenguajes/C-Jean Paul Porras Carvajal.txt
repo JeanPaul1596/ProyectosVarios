@@ -1,0 +1,53 @@
+Tarea Jean Paul Porras Carvajal
+
+
+Ejercicio 1:
+Escribir un programa en C que solicite el diámetro de un circulo al usuario y retorne el área.
+#include <conio.h>
+#include <stdio.h>
+
+int main()
+{
+    float radio, area;
+
+    printf( "\n   Introduzca Diametro: " );
+    scanf( "%f", &radio );
+    radio = radio / 2;
+
+    area = 3.14 * radio * radio;
+
+    printf( "\n   El area de la circunferencia es: %.2f", 160, area );
+
+    printf( "\n\n   Pulse cualquier tecla para terminar" );
+    getch(); /* Pausa */
+   
+    return 0;
+}
+
+
+Ejercicio 2:
+Escribir un programa en C que retorne si de dos números que se reciben en la función, se imprima en consola si los números son iguales o si son diferentes.
+
+
+#include <conio.h>
+#include <stdio.h>
+
+int main()
+{
+    int total,numero, numero2;
+
+
+        printf( "\n   Introduzca un numero entero: ");
+        scanf( "%d", &numero );
+	printf( "\n   Introduzca un numero entero nuevamente: ");
+        scanf( "%d", &numero2 );
+
+        if(numero==numero2)
+		printf( "\n   Los numeros son iguales );
+
+	else
+		printf( "\n   Los numeros son Diferentes);
+	
+       getch(); /* Pausa */
+
+}

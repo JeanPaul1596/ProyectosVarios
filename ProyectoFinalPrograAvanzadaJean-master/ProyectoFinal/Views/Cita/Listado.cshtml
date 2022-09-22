@@ -1,0 +1,86 @@
+﻿@model IEnumerable<ProyectoFinal.Models.ClienteModels>
+
+@{
+    ViewBag.Title = "Listado de citas";
+}
+
+<h2>Listado</h2>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                <h2>@ViewBag.Title</h2>
+                <table class="table table-striped table-dark">
+                    <tr>
+                        <th>
+                            Cédula
+                        </th>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Apellido
+                        </th>
+                        <th>
+                            Dirección
+                        </th>
+                        <th>
+                            Teléfono
+                        </th>
+                        <th>
+                            Motivo
+                        </th>
+                        <th>
+                            Nombre de la Mascota
+                        </th>
+                        <th>
+                            Fecha de la cita
+                        </th>
+
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IDCLIENTE)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NOMBRECLIENTE)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.APELLIDOCLIENTE)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DIRECCIONCLIENTE)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TELEFONOCLIENTE)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MOTIVOCITA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NOMBREMASCOTA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FECHACITA)
+                            </td>
+
+                            <td>
+                                @Html.ActionLink("Agregar Control", "Registrar", "Control", new { idCita = item.IDCITA }, new { @class = "btn btn-secondary" })
+                            </td>
+                            <td>
+                                @Html.ActionLink("Ver Controles", "ListaRegistroControl", "Control", new { idCita = item.IDCITA }, new { @class = "btn btn-secondary" })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+

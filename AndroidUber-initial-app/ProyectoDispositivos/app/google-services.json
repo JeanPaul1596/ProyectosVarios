@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "717559791923",
+    "project_id": "proyectofinal-78365",
+    "storage_bucket": "proyectofinal-78365.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717559791923:android:32196ebf8a277a40f43e46",
+        "android_client_info": {
+          "package_name": "com.schaffen.proyectofinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717559791923-nedql1o73jcae9466kl25v27sqhb5hsm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.schaffen.proyectofinal",
+            "certificate_hash": "4cfdc14fc6951bf9d71da28ff1c89e966509e2d6"
+          }
+        },
+        {
+          "client_id": "717559791923-b93q2m1t7evfsja93tgtir7dd4n55bbo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnMRgg4wwsgKmik_zedgIfx3Eax_44kaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717559791923-b93q2m1t7evfsja93tgtir7dd4n55bbo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

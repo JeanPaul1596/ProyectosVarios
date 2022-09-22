@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:body>
+        <ui:composition template="./plantilla/plantilla.xhtml">
+            <ui:define name="content">
+                <h:form class="container" style="width: 100%">
+                    <div class="form-group-row">
+
+                        <h2 class="my-6">Alma del Pacifico Hotel y Spa</h2>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                         <h1 class="my-6">Ingrese sus datos en el formulario</h1>
+                        <p:growl id="growl" sticky="true" showDetail="true"/>
+                        <p:wizard>
+                            <p:tab id="personal" title="Datos">
+                                <p:panel header="Datos Personales">
+                                    <p:messages />
+                                    <h:panelGrid columns="2" columnClasses="label, value">
+                                        <h:outputText value="Nombre: " />
+                                        <p:inputText value="#{form.datos.nombre}" required="true" label="Nombre"/>
+
+                                        <h:outputText value="Cédula: " />
+                                        <p:inputText value="#{form.datos.cédula}" required="true" label="Cedula"/>
+                                        
+                                        <h:outputText value="Sexo" />
+                                        <p:inputText value="#{form.datos.sexo}" required="true" label="Sexo"/>
+
+                                        <h:outputText value="Correo" />
+                                        <p:inputText value="#{form.datos.correo}"/>
+
+                                        <h:outputText value="Teléfono: " />
+                                        <p:inputText value="#{form.datos.teléfono}" required="true" label="Telefono"/>
+                                        
+                                        <h:outputText value="País " />
+                                        <p:inputText value="#{form.datos.país}" required="true" label="País"/>
+                                    </h:panelGrid>
+                                </p:panel>
+                            </p:tab>
+
+                           
+                            <p:tab id="personal1" title="Estadia">
+                                <p:panel header="Estadia">
+                                    <p:messages />
+                                    <h:panelGrid columns="2" columnClasses="label, value">
+                                        <h:outputText value="Tipo de estadia: " />
+                                        <p:inputText value="#{form.datos.estadia}" required="true" label="Estadia"/>
+
+                                        <h:outputText value="Mes: " />
+                                        <p:inputText value="#{form.datos.mes}" required="true" label="Mes"/>
+
+                                        <h:outputText value="Año: " />
+                                        <p:inputText value="#{form.datos.año}" required="true" label="Año"/>
+                                    </h:panelGrid>
+                                </p:panel>
+                            </p:tab>
+
+                            <p:tab id="personal2" title="Especiales">
+                                <p:panel header="Especiales">
+                                    <h:panelGrid columns="1" columnClasses="label, value">
+                                        <h:outputText value="Evento especial: " />
+                                        <h:inputText value="#{form.datos.especial}" styleClass="outputLabel"/>
+                                        <h:outputText value="Entretenimientos: " />
+                                        <h:inputText value="#{form.datos.entretenimientos}" styleClass="outputLabel"/>
+                                    </h:panelGrid>
+
+                                    <p:commandButton value="Agendar" action="#{form.save()}" update="growl" process="@this"/>
+                                </p:panel>
+                            </p:tab>
+                        </p:wizard>
+                        <br></br>
+                        <br></br>
+                    </div> 
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

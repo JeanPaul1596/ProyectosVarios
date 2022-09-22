@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNet.Identity
+<div  class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+    <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                @if (Request.IsAuthenticated)
+
+                {
+                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                <ul class="nav navbar-nav navbar-right">
+
+                   
+                        <li class="dropdown-item">
+                            @Html.ActionLink("Usuario: " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                        </li>
+                        <li>
+                            <div class="dropdown-divider"></div>
+                            <button class="btn btn-link" href="javascript:document.getElementById('logoutForm').submit()">Log off</button>
+
+                        </li>
+                                       
+                </ul>
+
+
+                    }
+                }
+                else
+                {
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown-item">
+                    @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "navbar-dark" })
+
+                </li>
+                
+                <li class="dropdown-item">
+                    @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "navbar-dark" })
+                </li>
+            </ul>
+
+                }
+            </div>
+        </li>
+    </ul>
+</div>
+

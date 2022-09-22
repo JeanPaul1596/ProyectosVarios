@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PROYECTOSC601Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="IDCLIENTE" />
+          </Key>
+          <Property Name="IDCLIENTE" Type="int" Nullable="false" />
+          <Property Name="NOMBRECLIENTE" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="APELLIDOCLIENTE" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="DIRECCIONCLIENTE" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TELEFONOCLIENTE" Type="int" Nullable="false" />
+          <Property Name="MOTIVOCITA" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="NOMBREMASCOTA" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="FECHACITA" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ESTADO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CONTROL">
+          <Key>
+            <PropertyRef Name="IDCONTROL" />
+          </Key>
+          <Property Name="IDCONTROL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CONTROLMASCOTA" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="NOMBREVETERINARIO" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="CITAPROXIMA" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="IDCLIENTE" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__CONTROL__IDCLIEN__267ABA7A">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="CONTROL" Type="Self.CONTROL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="IDCLIENTE" />
+            </Principal>
+            <Dependent Role="CONTROL">
+              <PropertyRef Name="IDCLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PROYECTOSC601ModelStoreContainer">
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONTROL" EntityType="Self.CONTROL" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CONTROL__IDCLIEN__267ABA7A" Association="Self.FK__CONTROL__IDCLIEN__267ABA7A">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="CONTROL" EntitySet="CONTROL" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PROYECTOSC601Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="IDCLIENTE" />
+          </Key>
+          <Property Name="IDCLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRECLIENTE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="APELLIDOCLIENTE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCIONCLIENTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONOCLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="MOTIVOCITA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBREMASCOTA" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHACITA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CONTROL" Relationship="Self.FK__CONTROL__IDCLIEN__267ABA7A" FromRole="CLIENTE" ToRole="CONTROL" />
+        </EntityType>
+        <EntityType Name="CONTROL">
+          <Key>
+            <PropertyRef Name="IDCONTROL" />
+          </Key>
+          <Property Name="IDCONTROL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CONTROLMASCOTA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBREVETERINARIO" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CITAPROXIMA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDCLIENTE" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK__CONTROL__IDCLIEN__267ABA7A" FromRole="CONTROL" ToRole="CLIENTE" />
+        </EntityType>
+        <Association Name="FK__CONTROL__IDCLIEN__267ABA7A">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="CONTROL" Type="Self.CONTROL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="IDCLIENTE" />
+            </Principal>
+            <Dependent Role="CONTROL">
+              <PropertyRef Name="IDCLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PROYECTOSC601Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+          <EntitySet Name="CONTROL" EntityType="Self.CONTROL" />
+          <AssociationSet Name="FK__CONTROL__IDCLIEN__267ABA7A" Association="Self.FK__CONTROL__IDCLIEN__267ABA7A">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="CONTROL" EntitySet="CONTROL" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PROYECTOSC601ModelStoreContainer" CdmEntityContainer="PROYECTOSC601Entities">
+          <EntitySetMapping Name="CLIENTE">
+            <EntityTypeMapping TypeName="PROYECTOSC601Model.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="IDCLIENTE" ColumnName="IDCLIENTE" />
+                <ScalarProperty Name="NOMBRECLIENTE" ColumnName="NOMBRECLIENTE" />
+                <ScalarProperty Name="APELLIDOCLIENTE" ColumnName="APELLIDOCLIENTE" />
+                <ScalarProperty Name="DIRECCIONCLIENTE" ColumnName="DIRECCIONCLIENTE" />
+                <ScalarProperty Name="TELEFONOCLIENTE" ColumnName="TELEFONOCLIENTE" />
+                <ScalarProperty Name="MOTIVOCITA" ColumnName="MOTIVOCITA" />
+                <ScalarProperty Name="NOMBREMASCOTA" ColumnName="NOMBREMASCOTA" />
+                <ScalarProperty Name="FECHACITA" ColumnName="FECHACITA" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONTROL">
+            <EntityTypeMapping TypeName="PROYECTOSC601Model.CONTROL">
+              <MappingFragment StoreEntitySet="CONTROL">
+                <ScalarProperty Name="IDCONTROL" ColumnName="IDCONTROL" />
+                <ScalarProperty Name="CONTROLMASCOTA" ColumnName="CONTROLMASCOTA" />
+                <ScalarProperty Name="NOMBREVETERINARIO" ColumnName="NOMBREVETERINARIO" />
+                <ScalarProperty Name="CITAPROXIMA" ColumnName="CITAPROXIMA" />
+                <ScalarProperty Name="IDCLIENTE" ColumnName="IDCLIENTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

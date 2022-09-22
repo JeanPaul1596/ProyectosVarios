@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:body>
+        <ui:composition template="./plantilla/plantilla.xhtml">
+            <ui:define name="content">
+                <h:form class="container" style="width: 100%">
+                    <div class="form-group-row">
+
+                        <h2 class="my-4">Alma del Pacifico Hotel y Spa</h2>
+                        <br/>
+
+
+                        <div class="container" style="width: 80%">
+                            <img class="img-fluid rounded mb-4" src="imagenes/1.jpg" alt="" />
+                        </div> 
+
+                        <div class="col-lg-15"> 
+                            <br/>
+                            <br/>
+                            <h2>Alma del Pacifico</h2>
+                            <h5>Un escape acogedor</h5> 
+                            <br/>
+                            <p>
+                                Ubicado en la playa a lo largo de la hermosa Playa Esterillos Este,
+                                en la impresionante región del Pacífico Central de Costa Rica, nuestro
+                                hotel internacional de 4 estrellas es la mejor escapada junto al mar.
+                                La playa bañada por el sol, las relucientes olas del océano y los escarpados 
+                                acantilados verdes crean un paisaje impresionante en contraste con las exclusivas
+                                villas color pastel de Alma del Pacífico. Hermosos senderos para caminar conducen
+                                a través de coloridos jardines ornamentales, de hierbas y vegetales hasta su 
+                                bungalow oasis. Y la increíble vida salvaje (que incluye multitud de guacamayos
+                                rojos, mariposas, iguanas y lagartos en peligro de extinción) lleva las maravillas
+                                naturales de Costa Rica a la puerta de su casa.</p>
+                        </div>
+                        <h1 class="my-4">Opiniones de nuestros clientes</h1>
+                        <p:accordionPanel multiple="true" class="py-2 bg-dark">         
+                            <p:tab title="Facebook" >
+                                <h1 style="color: black">Fiorella Porras.</h1>
+                                <h:panelGrid columns="2" cellpadding="10">               
+                                    <h:outputText 
+                                        value="La estadía en el hotel fue una experiencia hermosa,
+                                        nos divertimos en familia y los espacios que ofrece 
+                                        el spa permite que los niños, jóvenes y adultos se entretengan al máximo.
+                                        El spa recomendadísimo, algo inolvidable." />          
+                                </h:panelGrid>
+                            </p:tab>
+                            <p:tab title="Facebook" >
+                                <h1 style="color: black">Andrey Solano P.</h1>
+                                <h:panelGrid columns="2" cellpadding="10">
+                                <h:outputText 
+                                        value="¡Excelente! Fuimos varios días y hubiera deseado quedarme 
+                                        allí un mes más, ofrecen muchas actividades, la comida es deliciosa,
+                                        las bebidas y postres también. A los niños les agradó mucho la piscina 
+                                        y los juegos, a mi mamá y hermana les fascinó el spa, salieron como nuevas
+                                        de lo relajadas que quedaron." />
+                                </h:panelGrid>
+                            </p:tab>
+                            <p:tab title="Facebook" >
+                                <h1 style="color: black">Sharon Valverde Rodríguez.</h1>
+                                <h:panelGrid columns="2" cellpadding="10">
+                                    <h:outputText 
+                                        value="Simplemente estupendo, sin palabras. El servicio al cliente, la atención,
+                                        la amabilidad de los empleados, el poder estar en contacto con la naturaleza... 
+                                        todo fue bello. Una experiencia que nunca olvidaremos mi familia y yo. 
+                                        Nos encantó la limpieza de los sitios y el respeto por la vida animal con 
+                                        la que se comparte la zona, así como la comodidad de traslado, los parqueos
+                                        y demás." />
+                                </h:panelGrid>
+                            </p:tab>
+                            <p:tab title="Facebook" >
+                                <h1 style="color: black"> Angerith Vargas H.</h1>
+                                <h:panelGrid columns="2" cellpadding="10">
+                                    <h:outputText 
+                                        value="Pasamos unos días en el hotel y nos gustó mucho, 
+                                        se preocupan mucho por atender al cliente de forma respetuosa 
+                                        y eficiente, me parece muy buena la seguridad que brindan para 
+                                        los niños porque se evitan accidentes y además en el restaurante,
+                                        en el spa y las piscinas se ofrece el espacio adecuado para que los
+                                        padres podamos disfrutar al mismo tiempo que cuidamos de los niños." />
+                                </h:panelGrid>
+
+                            </p:tab>  
+                        </p:accordionPanel>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                         <div class="col-lg-15">  
+                        <p:growl id="growl" showDetail="true" />
+                        <h3>Califiquenos </h3>
+
+                        <h:panelGrid class="container" columns="1" style="margin-bottom: 15px" >
+                            <p:inputText id="txt5" value="#{sliderView.number7}" />
+                            <p:slider for="txt5">
+                                <p:ajax event="slideEnd" listener="#{sliderView.onSlideEnd}" update="growl" />
+                            </p:slider>
+                        </h:panelGrid>
+                         </div>
+    
+                       </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

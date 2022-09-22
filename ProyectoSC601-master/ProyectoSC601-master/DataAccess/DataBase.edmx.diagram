@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c60e7c61a98b497e9afc9afc668eec61" Name="Diagram1">
+        <EntityTypeShape EntityType="PROYECTOSC601Model.CLIENTE" Width="1.75" PointX="0.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROYECTOSC601Model.CONTROL" Width="2" PointX="2.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="PROYECTOSC601Model.FK__CONTROL__IDCLIEN__267ABA7A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Practica Examen</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+	<link href="css/EstilosSitio.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+   
+
+    <style>
+    	.Centro
+    	{
+    		text-align: center; 
+    	}
+
+    	</style>
+
+
+        
+				<!-- Estilos CSS -->
+			
+<div class="card-body">
+				<table class="table table-striped" id="TablaDatos">
+        <thead class="Centro">
+					<tr>
+						<th>Código</th>
+						<th>Precio</th>
+						<th>%Obligatorio</th>
+						<th>%Opcional</th>
+						<th>Acción</th>
+					</tr>
+					 
+					<tr>
+						 
+						<td id=Cod1>1</td>
+						<td> 3500</td>
+						<td>13</td>
+						<td>1</td>
+						<td><button type="button" class="btn btn-primary form-control" value="Calcular" onclick="CalcularPrecio(Cod1.innerText);">Calcular</button></td>
+						 
+					</tr> 
+					<tr >
+						 
+						<td id=Cod2>2</td>
+						<td>1000</td>
+						<td>5</td>
+						<td>0</td>
+						<td><button type="button" class="btn btn-primary form-control" value="Calcular" onclick="CalcularPrecio(Cod2.innerText);">Calcular</button></td>
+						 
+					</tr>
+					<tr >
+						
+						<td id=Cod3>3</td>
+						<td>12000</td>
+						<td>13</td>
+						<td>4</td>
+						<td><button type="button" class="btn btn-primary form-control" value="Calcular"  onclick="CalcularPrecio(Cod3.innerText);">Calcular</button></td>
+						 
+					</tr>
+					<tr>
+						 
+						<td id=Cod4>4</td>
+						<td>135000</td>
+						<td>2</td>
+						<td>0</td>
+						<td><button type="button" class="btn btn-primary form-control" value="Calcular" onclick="CalcularPrecio(Cod4.innerText);">Calcular</button></td>
+						 
+					</tr>
+					<tr id=row5>
+						 
+						<td  id=Cod5>5</td>
+						<td>85000</td>
+						<td>6</td>
+						<td>0</td>
+						<td><button type="button" class="btn btn-primary form-control" value="Calcular" onclick="CalcularPrecio(Cod5.innerText);">Calcular</button></td>
+						 
+							
+					</tr>
+					</tbody>
+				</table>
+
+				<input type="button" class="btn btn-primary" value="Contar % mayores o iguales a 5" onclick="mayores5();"/>
+				<input type="button" class="btn btn-success" value="Contar % menores a 5" onclick="menores5();" />
+				<input type="button" class="btn btn-danger" value="Sumar precios totales" onclick="sumar();" />
+
+
+</div>
+			 
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/FuncionesSitio.js"></script>
+
+  <script>
+   
+    
+
+	
+
+		function CalcularPrecio(codigo)
+	{
+
+		var tablita = document.getElementById("TablaDatos");
+		var precio = parseInt(tablita.rows[codigo].cells[1].innerHTML);
+		
+		 
+				alert(precio);
+	}
+	
+
+		function mayores5()
+	{
+
+		var tablita = document.getElementById("TablaDatos")
+		
+		var contador=0;
+		var total = 0;
+
+		for(var i = 1; tablita.rows[i]; i ++)
+	{
+		var Obligatorio = parseInt(tablita.rows[i].cells[2].innerHTML);
+		var Opcional = parseInt(tablita.rows[i].cells[3].innerHTML);
+		
+		if (Obligatorio >= 5){
+            contador++
+		}
+
+		if (Opcional >= 5){
+            contador++
+		}
+
+		total = contador;
+    }
+    			
+			alert(total);
+
+		}
+		
+	
+
+
+		function menores5()
+	{
+
+		var tablita = document.getElementById("TablaDatos")
+		
+		var contador=0;
+		var total = 0;
+
+		for(var i = 1; tablita.rows[i]; i ++)
+	{
+		var Obligatorio = parseInt(tablita.rows[i].cells[2].innerHTML);
+		var Opcional = parseInt(tablita.rows[i].cells[3].innerHTML);
+		
+		if (Obligatorio < 5){
+            contador++
+		}
+
+		if (Opcional < 5){
+            contador++
+		}
+
+		total = contador;
+    }
+    			
+			alert(total);
+	}
+
+		function sumar()
+	{ 
+		
+		var tablita = document.getElementById("TablaDatos")
+		var total=0;
+
+		for(var i = 1; tablita.rows[i]; i ++)
+		{
+		var precio = parseInt(tablita.rows[i].cells[1].innerHTML);
+		var Obligatorio = parseInt(tablita.rows[i].cells[2].innerHTML);
+		var Opcional = parseInt(tablita.rows[i].cells[3].innerHTML);
+		var Resultado = precio + ((precio * Obligatorio)/100) + ((precio * Opcional)/100);	
+		 total = total + Resultado;	
+			
+
+		}
+		alert(total);
+	}
+	
+
+	  
+	
+	
+  </script>
+</body>
+</html>
+

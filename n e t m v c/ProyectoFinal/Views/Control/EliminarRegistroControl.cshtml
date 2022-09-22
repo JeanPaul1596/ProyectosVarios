@@ -1,0 +1,97 @@
+﻿@model ProyectoFinal.Models.ControlModels
+
+@{
+    ViewBag.Title = "EliminarRegistroControl";
+}
+
+<h2>Eliminar Registro Control</h2>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                <div>
+                    <h4>ControlModels</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        
+
+                        
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.IDCONTROL)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.IDCONTROL)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CONTROLMASCOTA)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CONTROLMASCOTA)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NOMBREVETERINARIO)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.NOMBREVETERINARIO)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CITAPROXIMA)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CITAPROXIMA)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.IDCITA)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.IDCITA)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-default" /> |
+                            
+                        </div>
+                    }
+                </div>
+                }
+
+                <div>
+                    @Html.ActionLink("Volver al listado", "ListaRegistroControl", new { idCita = Model.IDCITA })
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+
+
+@if (Model.estado)
+{
+    <script>Alert("El control se edito correctamente")</script>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

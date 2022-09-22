@@ -1,0 +1,14 @@
+Proyectofinal
+
+docker push jp1596/proyectofinal:tagname
+
+apiproyectofinal
+
+docker push jp1596/apiproyectofinal:tagname
+
+
+
+Página
+
+https://proyectofinal02.azurewebsites.net/
+

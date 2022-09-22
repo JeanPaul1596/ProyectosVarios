@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
+
+            <style>
+                .carousel-item {
+                    height: 65vh;
+                    min-height: 300px;
+                    background: no-repeat center center scroll;
+                    -webkit-background-clip: content-box;
+                    -moz-background-clip: content-box;
+                    -o-border-image: auto;
+                    background-size: cover;
+                }
+            </style>
+            <header>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <!-- Slide One - Set the background image for this slide in the line below -->
+                        <div class="carousel-item active" style="background-image: url('https://static1.eldiariomontanes.es/www/multimedia/201909/20/media/CDM/dmascotas/dmascotas21.jpeg') ">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3 class="display-4">Ámalos</h3>
+                                <p class="lead">Los animales son seres realmente extraordinarios.</p>
+                            </div>
+                        </div>
+                        <!-- Slide Two - Set the background image for this slide in the line below -->
+                        <div class="carousel-item" style="background-image: url('https://estaticos-cdn.prensaiberica.es/clip/9c3bff55-4d95-4409-800f-8fcb51a36b89_16-9-discover-aspect-ratio_default_0.jpg')">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3 class="display-4">Cuídalos</h3>
+                                <p class="lead">Amor es una palabra de cuatro patas.</p>
+                            </div>
+                        </div>
+                        <!-- Slide Three - Set the background image for this slide in the line below -->
+                        <div class="carousel-item" style="background-image: url('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2019/01/wallpaper-full-hd.jpg?itok=hMj9f99s') ">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3 class="display-4">Consiéntelos</h3>
+                                <p class="lead">Respetar a los animales es una obligación, amarlos es un privilegio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <section class="py-5">
+                <div class="container">
+                    <h1 class="mb-4">Bienvenidos a tú veterinaria.</h1>
+                    <!-- Marketing Icons Section-->
+                    <div class="row">
+                        <div class="col-lg-4 mb-4 mb-lg-0">
+                            <div class="card h-100">
+                                <h4 class="card-header">Quirófano</h4>
+                                <div class="card-body"><p class="card-text">Nuestros quirófanos están acondicionado para otorgarle a nuestros pacientes comodidad y seguridad. Situado en una sala exclusiva e independiente de la clínica, nos permite mantener un ambiente controlado estéril por medio de dos lámparas de luz ultravioleta que esterilizan el ambiente, así como las sábanas y campos quirúrgicos; otorgando de esta manera seguridad ambiental.</p></div>
+                                <div class="card-footer"> <a class="nav-link">@Html.ActionLink("Registrar Cita", "Registrar", "Cita", routeValues: null, htmlAttributes: new { @class = "btn btn-primary" })</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4 mb-lg-0">
+                            <div class="card h-100">
+                                <h4 class="card-header">Cuidado crítico</h4>
+                                <div class="card-body"><p class="card-text">Atendemos de manera personalizada, con el cuidado debido, a aquellos pacientes que requieran por una situación especial monitorización continua.</p></div>
+                                <div class="card-footer"> <a class="nav-link">@Html.ActionLink("Registrar Cita", "Registrar", "Cita", routeValues: null, htmlAttributes: new { @class = "btn btn-primary" })</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card h-100">
+                                <h4 class="card-header"> Emergencias</h4>
+                                <div class="card-body"><p class="card-text">Las emergencias ocurren en el momento menos esperado, es por eso que brindamos el servicio de atención las 24 horas para ofrecer una atención.</p></div>
+                                <div class="card-footer"><a class="nav-link">@Html.ActionLink("Registrar Cita", "Registrar", "Cita", routeValues: null, htmlAttributes: new { @class = "btn btn-primary" })</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Portfolio Section-->
+            <section class="py-5 bg-light">
+                <div class="container">
+                    <h2 class="mb-4">Nuestros pacientes</h2>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#!"><img class="card-img-top" src="https://www.hogarmania.com/archivos/201708/cachorro-veterinario-668x400x80xX.jpg" alt="..." /></a>
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="#!">Max</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#!"><img class="card-img-top" src="https://assets.entrepreneur.com/content/3x2/2000/1607626854-perritos-covid1.jpg" alt="..." /></a>
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="#!">Donky</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#!"><img class="card-img-top" src="https://www.hola.com/imagenes/estar-bien/20190301137999/thedoger-cafeteria-adoptar-perros-gt/0-651-995/perro-t.jpg?filter=w600&filter=ds75" alt="..." /></a>
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="#!">Jack</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#!"><img class="card-img-top" src="https://www.imveterinaria.es/uploads/2020/02/imveterinaria_veterinaria_profesion_2905_06125412.png" alt="..." /></a>
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="#!">Pepe</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#!"><img class="card-img-top" src="https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_image__small/public/temas/elegir_buen_veterinario_p.jpg" alt="..." /></a>
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="#!">Bigotes </a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#!"><img class="card-img-top" src="https://essentialspetcare.com/wp-content/uploads/2019/09/How-often-should-cats-visit-the-veterinarian-1.jpg" alt="..." /></a>
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="#!">Canelo</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <aside class="py-5 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8"></div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+      
+  
+<h:body>
+    <ui:composition template="./plantilla/plantilla.xhtml">
+            <ui:define name="content">
+        <h:form class="container" style="width: 100%">
+            <div class="form-group-row">
+                <h3 style="color: black"><b>NUESTRA VETERINARIA</b></h3>
+                <br></br>
+                <p><i>La Veterinaria Pet House tiene su apertura un lunes 1 de Enero de 2015, con muchas ilusiones y un gran entusiasmo quisimos marcar diferencia, es por ello que desde hace 5 años a la fecha tratamos siempre de estar a la vanguardia tanto en la educación continua como en el equipamiento de nuestra clínica, siempre en procura de brindar un excelente servicio para nuestros clientes y pacientes.
+                    De igual forma tenemos un gran grupo interdisciplinario de profesionales especialistas en distintas áreas que nos dan soporte en la atención de nuestros pacientes.
+                    En nuestra consulta médica, no solo nos avocamos a atender las necesidades de nuestros pacientes, sino a ofrecerle a nuestros clientes valiosos consejos pertinentes al cuido responsable de sus mascotas. 
+                    Es por ello que tomamos tiempo para darle consejos sobre: nutrición, profilaxis dentaria, manejo del comportamiento de la mascota, programas de salud e higiene entre otros.
+                    Hacemos énfasis en la importancia que tiene el tener a nuestros pacientes en óptimas condiciones de salud y proveerles un ambiente sano en el que se puedan desarrollar libremente al cuido y protección de sus dueños, de esta manera cumplimos con nuestra misión, que es:</i></p>
+                <h1 style="color: black">VELAMOS POR EL BIENESTAR DE SU FAMILIA, PROTEGIENDO LA SALUD DE SU MASCOTA</h1>
+                <br></br>
+                 <img src ="3.jpg" alt="Inicio1" width="600" height="400"></img>
+                 <br></br>
+                <h3 style="color: black"><i>NUESTROS PROFESIONALES</i></h3>
+                <br></br>
+                
+    <h3>Estamos acreditados en diversas áreas de la práctica veterinaria</h3>
+    <p:accordionPanel multiple="true">
+        <p:tab title="Médico Veterinario" >
+            <h1 style="color: black">Dr.Miguel Alberto Solano Mata</h1>
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage><img src ="dr1.jpg" alt="Inicio1" width="150" height="150"></img></p:graphicImage>
+                <h:outputText 
+                    value="El doctor Miguel Alberto Solano Mata se graduó de médico veterinario en la Universidad Nacional en San José de Costa Rica, en 1992.
+                           En enero del 2015 fundó la Clínica Veterinaria Pet House y desde entonces ha dado atención y provisto de buena salud a gran cantidad 
+                           de mascotas, y también ha ayudado a sus dueños a entenderlos y darles mejor calidad de vida.
+                           Habiendo desempeñado labores en la docencia tanto en la UNA como en la Universidad San Francisco de Asís, el doctor también realiza labores 
+                           como capacitador impartiendo cursos de interpretación práctica del laboratorio clínico, principios generales de anestesia
+                           y principales maniobras en urgencias veterinarias, tanto para estudiantes como para médicos veterinarios." />
+            </h:panelGrid>
+            
+        </p:tab>
+           <p:tab title="la página de Faceboo" >
+            <h1 style="color: black">Andrey Solano P.</h1>
+            <h:panelGrid columns="2" cellpadding="10">
+               
+                <h:outputText 
+                    value="¡Excelente! Fuimos varios días y hubiera deseado quedarme 
+                                    allí un mes más, ofrecen muchas actividades, la comida es deliciosa,
+                                    las bebidas y postres también. A los niños les agradó mucho la piscina 
+                                    y los juegos, a mi mamá y hermana les fascinó el spa, salieron como nuevas
+                                    de lo relajadas que quedaron." />
+                 <footer class="blockquote-footer">
+                     <br></br>
+                         
+                                    
+            </h:panelGrid>
+            
+        </p:tab>
+               <p:tab title="Fisioterapeuta Canina" >
+            <h1 style="color: black">Dra. Luisa María Montes Rojas</h1>
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage><img src ="dr2.jpg" alt="Dr2" width="150" height="150"></img></p:graphicImage>
+                <h:outputText 
+                    value="La Dra Luisa María Montes Rojas cuenta con más de 10 años de experiencia en el tratamiento con perros, además está altamente capacitada 
+                           con cuatro postgrados y más de 30 certificaciones con técnicas aplicables a fisioterapia y rehabilitación canina." />
+            </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>
+    <br></br><br></br>
+            </div>
+            <hr></hr>
+        </h:form>
+            </ui:define>
+    </ui:composition>
+    </h:body>
+</html>

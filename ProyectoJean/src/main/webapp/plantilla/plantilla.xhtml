@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/cssLayout.css" rel="stylesheet" type="text/css"/>
+        <link href="css/default.css" rel="stylesheet" type="text/css"/>
+        <title>Proyecto</title>
+    </h:head>
+    <h:body style="background-color: #ffffff; width: 98%;text-align:center;">
+        <div id="top" class="py-2 bg-dark" >
+            <ui:insert name="top">
+                <p:tabMenu>
+                    <p:menuitem  class="py-1 bg-dark" outcome="/faces/index.xhtml" value="Inicio"/>
+                    <p:menuitem  class="py-1 bg-dark" value="Acerca de" url="Acerca de.xhtml"/>
+                    <p:menuitem  class="py-1 bg-dark" value="Entretenimiento"  url="Entretenimiento.xhtml"/>
+                    <p:menuitem  class="py-1 bg-dark" value="Reservaciones" url="Reservaciones.xhtml"/>
+                    <p:menuitem  class="py-1 bg-dark" value="Ubicación" url="ubicacion.xhtml"/>
+                </p:tabMenu>          
+                
+            </ui:insert>
+        </div>
+         
+        <div id="content" class="center_content" style="background-color: white"> 
+            
+            <ui:insert name="content">
+            </ui:insert>
+        </div>
+                
+          <div id="bottom">
+            <ui:insert name="bottom">
+                <footer class="py-4 bg-dark">
+                    <div class="container">
+                        <p class="m-0 text-center text-white">Copyright © Alma del Pacifico Hotel y Spa 2020</p>
+                      </div>
+               </footer>
+            </ui:insert>
+        </div>
+    </h:body>
+</html>

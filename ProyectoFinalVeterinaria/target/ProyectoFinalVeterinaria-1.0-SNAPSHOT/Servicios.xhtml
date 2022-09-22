@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+  
+<h:body>
+    <ui:composition template="./plantilla/plantilla.xhtml">
+            <ui:define name="content">
+        <h:form class="container" style="width: 100%">
+            <div class="form-group-row">
+                <h1 style="color: black"><b>SERVICIOS VETERINARIOS</b></h1>
+ <br></br>
+        <p:panelMenu style="width:500px;">
+            <p:submenu  label="Cita en Veterinaria">
+                <p:menuitem style="background-color: aliceblue"  value="Solicitar cita"  url="Cita.xhtml" />
+            </p:submenu>
+            <p:submenu label="Cita a Domicilio">
+                <p:menuitem style="background-color: aliceblue" value="Solicitar domicilio" url="Domicilio.xhtml"/>
+            </p:submenu>
+            <p:submenu label="Cita estetica">
+                <p:menuitem style="background-color: aliceblue" value="Solicitar cita estetica" url="Estetica.xhtml"/>
+            </p:submenu>
+        </p:panelMenu>
+            </div>
+            <br></br>
+            
+        </h:form>
+            </ui:define>
+    </ui:composition>
+</h:body>
+</html>

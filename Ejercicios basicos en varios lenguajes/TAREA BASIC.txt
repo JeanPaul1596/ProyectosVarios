@@ -1,0 +1,32 @@
+Tarea Jean Paul Porras Carvajal
+EJERCICIOS DE TAREA
+
+1) ¿Cuál es el error en este código si el funcionamiento 
+correcto es que debe sumar los números?
+
+10 INPUT "Digite un número", A
+20 INPUT "Digite un número", B
+30 C$ = A+B
+40 PRINT "Total: "; C$
+
+2) Saque el promedio de 3 números.
+
+10 INPUT "Digite un número", A
+20 INPUT "Digite un número", B
+30 INPUT "Digite un número", C
+40 S = A+B+C
+50 P$ = S/3
+60 PRINT "Total: "; P$
+
+3) Según el indice de masa corporal, si el mismo es igual o
+mayor a 25, eso significa que la persona tiene sobrepeso.
+Calcule si una persona tiene sobrepeso o no.
+
+Un ejemplo puede ser peso 68 y altura 1.65 = 24.98, sin sobrepeso
+
+10 INPUT "Digite su Peso", A
+20 INPUT "Digite su altura", B
+30 I = A/B
+40 IF I$ >= 25 
+THEN ="sobrepeso" 
+ELSE = "sin sobrepeso"

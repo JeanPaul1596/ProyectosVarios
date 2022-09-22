@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+ 
+    <body>
+        <ui:composition template="./plantilla/plantilla.xhtml">
+            <ui:define name="content">
+                <div class="container">        
+                    <br/>
+                    <h1 class="mt-4 mb-3">Acerca de
+                        <small>Alma Del Pacifico</small>
+                    </h1>
+                    <ol class="breadcrumb">      
+                    <li class="breadcrumb-item">
+                        <a href="index.xhtml">Inicio</a>
+                    </li>      
+                    <li class="breadcrumb-item active">Acerca de</li>
+                    </ol>
+    
+                    <div class="row">      
+                        <div class="col-lg-6">
+                            <img class="img-fluid rounded mb-4" src="imagenes/a.png" alt="" />
+                        </div>     
+                        <div class="col-lg-6"> 
+                            <br/>
+                            <br/>
+                            <h2>Alma Del Pacifico Beach Hotel y Spa</h2>
+                            <h5>Establecida en 2009</h5> 
+                            <br/>
+                             <p>
+                                Ubicado a lo largo de la hermosa Playa Esterillos Este, 
+                                en la impresionante región del Pacífico Central de Costa Rica,                                
+                               Alma Del Pacifico Beach Hotel y Spa es la mejor escapada junto al mar. 
+                               La playa bañada por el sol, las brillantes olas del océano y los escarpados
+                               acantilados verdes crean un paisaje impresionante. Hermosos senderos para 
+                               caminar conducen a través de coloridos jardines ornamentales, de hierbas y
+                               vegetales. Y la increíble vida salvaje (que incluye multitud de guacamayos 
+                               rojos, mariposas, iguanas y lagartos en peligro de extinción) lleva las maravillas
+                               naturales de Costa Rica a la puerta de su casa.
+                               
+                              </p>
+                            <p>Esperamos su estadía.</p>
+                        </div>
+                    </div> 
+                    
+                    
+                    <h3>Convenios</h3>
+    <p:ring id="custom" value="#{ringView.cars}" var="car" styleClass="image-ring" easing="easeInOutBack">
+        <p:graphicImage id="img" name="imagenes/car/#{car.brand}-big.gif" />
+    </p:ring>
+ 
+    <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;" layout="block">
+            <p:panelGrid  columns="2" rendered="*/#{not empty ringView.selectedCar}" columnClasses="value">
+                <f:facet name="header">
+                    <p:graphicImage name="imagenes/car/#{ringView.selectedCar.brand}-big.gif" /> 
+                </f:facet>
+ 
+                <h:outputText value="Id:" />
+                <h:outputText value="#{ringView.selectedCar.id}" />
+ 
+                <h:outputText value="Year" />
+                <h:outputText value="#{ringView.selectedCar.year}" />
+ 
+                <h:outputText value="Brand: " />
+                <h:outputText value="#{ringView.selectedCar.brand}" />
+ 
+                <h:outputText value="Color:" />
+                <h:outputText value="#{ringView.selectedCar.color}" style="color:#{ringView.selectedCar.color}" />
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+                    
+                </div>               
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

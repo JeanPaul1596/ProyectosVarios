@@ -1,0 +1,27 @@
+﻿
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+
+                <h1 class="text-danger">Error 404</h1>
+                <h2 class="text-danger">Se produjo un error al procesar su solicitud.</h2>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="text-center mt-4">
+                                <img class="mb-4 img-error" src="~/Content/assets/img/error-404-monochrome.svg" />
+                                <p class="lead">Esta URL solicitada no se encontró en este servidor.</p>
+                                <a class="nav-link">@Html.ActionLink("Regresar a inicio", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "nav-link" })  </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+</div>

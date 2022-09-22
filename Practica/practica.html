@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Eduardo Calvo</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<style>
+	
+		.Centro
+		{
+			text-align:center;
+		}
+	
+	</style>
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="	wrapper">
+
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Pr&aacute;ctica 1</div>
+      <div class="list-group list-group-flush"></div>
+    </div>
+
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-default" id="menu-toggle"><i class="fa fa-smile-o fa-3x"></i></button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"></i><span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        
+      <table class="table table-striped" id="TablaDatos">
+        <thead class="Centro">
+          <tr>
+            <th>C&oacute;digo</th>
+            <th>Precio</th>
+            <th>%Obligatorio</th>
+            <th>%Opcional</th>
+          </tr>
+        </thead>
+        <tbody class="Centro">
+          <tr onclick="SumarPrecioIndividual(this)">
+            <td id="Cod1">1</td>
+            <td>3500</td>
+            <td>13</td>
+            <td>1</td>
+          </tr>
+          <tr onclick="SumarPrecioIndividual(this)">
+            <td>2</td>
+            <td>1000</td>
+            <td>5</td>
+            <td>0</td> 
+          </tr>
+          <tr onclick="SumarPrecioIndividual(this)">
+            <td id="Cod3">3</td>
+            <td>12000</td>
+            <td>13</td>
+            <td>4</td>
+          </tr>
+          <tr onclick="SumarPrecioIndividual(this)">
+            <td id="Cod4">4</td>
+            <td>135000</td>
+            <td>2</td>
+            <td>0</td>
+          </tr>
+          <tr onclick="SumarPrecioIndividual(this)">
+            <td id="Cod5">5</td>
+            <td>85000</td>
+            <td>6</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table> 
+
+		<input type="button" class="btn btn-primary" value="Contar % mayores o iguales a 5">
+		
+		<input type="button" class="btn btn-success" value="Contar % menores a 5">
+		
+		<input type="button" class="btn btn-danger" value="Sumar precios totales">
+				
+      </div>
+	  
+    </div>
+
+  </div>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+   
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+	
+	/*Forma 1 NO RECOMENDADA*/
+	function CalculoIndividual(precio, porcentajeObligatorio, porcentajeVoluntario)
+	{
+		alert("--> " + precio + " " + porcentajeObligatorio + " " + porcentajeVoluntario);
+	}
+	
+	/*Forma 2 RECOMENDADA por celda*/
+	function CalcularPrecio(codigo)
+	{
+		var tablita = document.getElementById("TablaDatos")
+		var precio = tablita.rows[codigo].cells[1].innerHTML;
+		
+		alert(precio);
+	}
+	
+	/*Forma 3 RECOMENDADA por fila*/
+	function Calcular(indice)
+	{
+		var tablita = document.getElementById("TablaDatos")
+		var precio = tablita.rows[indice.rowIndex].cells[1].innerHTML;
+		
+		alert(precio);
+	}
+	
+	/*Forma 4 Creo que es la mejor*/
+	function SumarPrecioIndividual(indice)
+	{
+		var tablita = document.getElementById("TablaDatos")
+		var codSeleccionado = tablita.rows[indice.rowIndex].cells[0].innerHTML;
+		
+		for(var i = 1; tablita.rows[i]; i ++)
+		{
+			var codCiclo = tablita.rows[i].cells[0].innerHTML;
+						
+			if(codSeleccionado == codCiclo)
+			{
+				var precio = parseInt(tablita.rows[i].cells[1].innerHTML);
+				var pObligatorio = parseInt(tablita.rows[i].cells[2].innerHTML);
+				var pVoluntario = parseInt(tablita.rows[i].cells[3].innerHTML);
+				
+				alert(precio + (precio * (pObligatorio/100)) + (precio * (pVoluntario/100)));
+			}
+
+		}
+	}
+	
+	
+  </script>
+</body>
+</html>
